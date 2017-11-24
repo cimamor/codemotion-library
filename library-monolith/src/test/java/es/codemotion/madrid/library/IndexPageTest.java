@@ -32,6 +32,7 @@ public class IndexPageTest {
     @Test
     public void shouldShowCatalogWhenRequestingIndex() throws Exception {
         Item item = mock(Item.class);
+        
         given(bookRepository.findAll()).willReturn(Arrays.asList(item));
 
         HtmlPage page = this.webClient.getPage("/");
